@@ -2,13 +2,17 @@
 
 namespace app\controllers;
 
+use app\event\EventQueueJob;
+use app\event\events\BuyerPaidOrderEvent;
+use app\event\handlers\RewardReferralEventHandler;
+use app\models\ContactForm;
+use app\models\LoginForm;
+use app\models\Order;
 use Yii;
 use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\Response;
-use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
 
 class SiteController extends Controller
 {
@@ -61,6 +65,16 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        return $this->render('index');
+    }
+
+    public function actionMakeEvent(): string
+    {
+        Yii::info("Start make event");
+
+        $event = new BuyerPaidOrderEvent(new Order());
+        Yii::$app->eventChannel->triggerEvent($event);
+
         return $this->render('index');
     }
 

@@ -1,5 +1,8 @@
 <?php
 
+use app\event\EventChannel;
+use yii\queue\Queue;
+
 /**
  * This class only exists here for IDE (PHPStorm/Netbeans/...) autocompletion.
  * This file is never included anywhere.
@@ -21,7 +24,9 @@ class Yii {
 /**
  * @property yii\rbac\DbManager $authManager 
  * @property \yii\web\User|__WebUser $user
- * 
+ * @property EventChannel $eventChannel
+ * @property Queue $queue
+ *
  */
 class __Application {
 }

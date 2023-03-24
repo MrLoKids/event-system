@@ -1,0 +1,68 @@
+2023-03-24 20:12:58 [172.20.0.1][100][-][info][yii\web\Session::open] Session started
+2023-03-24 20:12:58 [172.20.0.1][100][-][info][application] Start make event
+    in /app/controllers/SiteController.php:71
+2023-03-24 20:12:58 [172.20.0.1][100][-][info][events] Triggered BuyerPaidOrderEvent event
+    in /app/event/EventChannel.php:44
+    in /app/controllers/SiteController.php:73
+2023-03-24 20:12:58 [172.20.0.1][100][-][info][events] By event `BuyerPaidOrderEvent` immediately triggered `SendPushSseEventHandler`
+    in /app/event/EventChannel.php:100
+    in /app/event/EventChannel.php:47
+    in /app/controllers/SiteController.php:73
+2023-03-24 20:12:58 [172.20.0.1][100][-][info][yii\queue\Queue] [10] app\event\EventQueueJob is pushed.
+    in /app/event/EventQueueJob.php:32
+    in /app/event/EventChannel.php:82
+    in /app/event/EventChannel.php:47
+2023-03-24 20:12:58 [172.20.0.1][100][-][info][events] By event `BuyerPaidOrderEvent` have sent to queue for processing `RewardReferralEventHandler`
+    in /app/event/EventChannel.php:89
+    in /app/event/EventChannel.php:47
+    in /app/controllers/SiteController.php:73
+2023-03-24 20:12:58 [172.20.0.1][100][-][info][yii\queue\Queue] [11] app\event\EventQueueJob is pushed.
+    in /app/event/EventQueueJob.php:32
+    in /app/event/EventChannel.php:82
+    in /app/event/EventChannel.php:47
+2023-03-24 20:12:58 [172.20.0.1][100][-][info][events] By event `BuyerPaidOrderEvent` have sent to queue for processing `SendBuyerNotificationEventHandler`
+    in /app/event/EventChannel.php:89
+    in /app/event/EventChannel.php:47
+    in /app/controllers/SiteController.php:73
+2023-03-24 20:12:58 [172.20.0.1][100][-][info][yii\queue\Queue] [12] app\event\EventQueueJob is pushed.
+    in /app/event/EventQueueJob.php:32
+    in /app/event/EventChannel.php:82
+    in /app/event/EventChannel.php:47
+2023-03-24 20:12:58 [172.20.0.1][100][-][info][events] By event `BuyerPaidOrderEvent` have sent to queue for processing `UpdateStatisticEventHandler`
+    in /app/event/EventChannel.php:89
+    in /app/event/EventChannel.php:47
+    in /app/controllers/SiteController.php:73
+2023-03-24 20:12:58 [172.20.0.1][100][-][info][application] Push event via SSE about order 1198602501 from buyer 1489332438
+    in /app/event/handlers/SendPushSseEventHandler.php:21
+    in /app/event/EventChannel.php:48
+    in /app/controllers/SiteController.php:73
+2023-03-24 20:14:10 [172.20.0.1][100][-][info][yii\web\Session::open] Session started
+2023-03-24 20:14:10 [172.20.0.1][100][-][info][application] Start make event
+    in /app/controllers/SiteController.php:71
+2023-03-24 20:14:10 [172.20.0.1][100][-][info][events] Triggered BuyerPaidOrderEvent event
+    in /app/event/EventChannel.php:44
+    in /app/controllers/SiteController.php:73
+2023-03-24 20:14:10 [172.20.0.1][100][-][info][events] By event `BuyerPaidOrderEvent` immediately triggered `SendPushSseEventHandler`
+    in /app/event/EventChannel.php:100
+    in /app/event/EventChannel.php:47
+    in /app/controllers/SiteController.php:73
+2023-03-24 20:14:10 [172.20.0.1][100][-][info][yii\queue\Queue] [13] app\event\EventQueueJob is pushed.
+    in /app/event/EventQueueJob.php:32
+    in /app/event/EventChannel.php:82
+    in /app/event/EventChannel.php:47
+2023-03-24 20:14:10 [172.20.0.1][100][-][info][events] By event `BuyerPaidOrderEvent` have sent to queue for processing `SendBuyerNotificationEventHandler`
+    in /app/event/EventChannel.php:89
+    in /app/event/EventChannel.php:47
+    in /app/controllers/SiteController.php:73
+2023-03-24 20:14:10 [172.20.0.1][100][-][info][yii\queue\Queue] [14] app\event\EventQueueJob is pushed.
+    in /app/event/EventQueueJob.php:32
+    in /app/event/EventChannel.php:82
+    in /app/event/EventChannel.php:47
+2023-03-24 20:14:10 [172.20.0.1][100][-][info][events] By event `BuyerPaidOrderEvent` have sent to queue for processing `UpdateStatisticEventHandler`
+    in /app/event/EventChannel.php:89
+    in /app/event/EventChannel.php:47
+    in /app/controllers/SiteController.php:73
+2023-03-24 20:14:10 [172.20.0.1][100][-][info][application] Push event via SSE about order 1890595324 from buyer 1461095201
+    in /app/event/handlers/SendPushSseEventHandler.php:21
+    in /app/event/EventChannel.php:48
+    in /app/controllers/SiteController.php:73

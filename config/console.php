@@ -1,33 +1,46 @@
 <?php
 
+use yii\queue\file\Queue;
+use yii\queue\LogBehavior;
+
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'basic-console',
-    'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'id'                  => 'basic-console',
+    'basePath'            => dirname(__DIR__),
+    'bootstrap'           => ['log', 'queue'],
     'controllerNamespace' => 'app\commands',
-    'aliases' => [
+    'aliases'             => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
         '@tests' => '@app/tests',
     ],
-    'components' => [
+    'components'          => [
+        'queue' => [
+            'class'  => Queue::class,
+            'as log' => LogBehavior::class,
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        'log' => [
+        'log'   => [
             'targets' => [
                 [
-                    'class' => 'yii\log\FileTarget',
+                    'class'  => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
+                ],
+                [
+                    'class'   => 'yii\log\FileTarget',
+                    'logFile' => '@app/runtime/logs/events.log',
+                    'logVars' => [],
+                    'levels'  => ['info'],
                 ],
             ],
         ],
-        'db' => $db,
+        'db'    => $db,
     ],
-    'params' => $params,
+    'params'              => $params,
     /*
     'controllerMap' => [
         'fixture' => [ // Fixture generation command line.
