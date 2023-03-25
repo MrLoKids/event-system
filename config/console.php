@@ -5,6 +5,7 @@ use yii\queue\LogBehavior;
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$logs = require __DIR__ . '/logs.php';
 
 $config = [
     'id'                  => 'basic-console',
@@ -25,18 +26,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'log'   => [
-            'targets' => [
-                [
-                    'class'  => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
-                ],
-                [
-                    'class'   => 'yii\log\FileTarget',
-                    'logFile' => '@app/runtime/logs/events.log',
-                    'logVars' => [],
-                    'levels'  => ['info'],
-                ],
-            ],
+            'targets' => $logs,
         ],
         'db'    => $db,
     ],

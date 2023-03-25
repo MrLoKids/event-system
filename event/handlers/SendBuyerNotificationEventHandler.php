@@ -18,7 +18,7 @@ class SendBuyerNotificationEventHandler extends BaseEventHandler
     {
         $buyer = $event->getBuyer();
         $order = $event->getOrder();
-        Yii::info("Send notification about new order {$order->id} from {$buyer->id}");
+        Yii::info("Send notification about new Order {$order->id} from Buyer {$buyer->id}");
         /**
          * e.g.
          * Yii::$app->notificationService->sendAboutNewOrder($buyer, $order);

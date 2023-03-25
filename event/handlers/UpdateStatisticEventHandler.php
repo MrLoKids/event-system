@@ -16,7 +16,7 @@ class UpdateStatisticEventHandler extends BaseEventHandler
     public function handle(Event $event): void
     {
         $buyerId = $event->getBuyer()->getId();
-        Yii::info("Update statistic about buyer $buyerId");
+        Yii::info("Update statistic about Buyer $buyerId");
         /**
          * e.g.
          * Yii::$app->statisticService->updateUser($buyerId);

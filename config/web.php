@@ -4,6 +4,7 @@ use app\event\EventChannel;
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$logs = require __DIR__ . '/logs.php';
 
 $config = [
     'id'         => 'basic',
@@ -44,18 +45,7 @@ $config = [
         ],
         'log'          => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets'    => [
-                [
-                    'class'  => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
-                ],
-                [
-                    'class'   => 'yii\log\FileTarget',
-                    'logFile' => '@app/runtime/logs/events.log',
-                    'logVars' => [],
-                    'levels'  => ['info'],
-                ],
-            ],
+            'targets'    => $logs
         ],
         'db'           => $db,
 

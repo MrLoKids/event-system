@@ -18,7 +18,7 @@ class SendPushSseEventHandler extends BaseEventHandler
     {
         $buyerId = $event->getBuyer()->getId();
         $orderId = $event->getOrder()->getId();
-        Yii::info("Push event via SSE about order $orderId from buyer $buyerId");
+        Yii::info("Push event via SSE about Order $orderId from Buyer $buyerId");
         /**
          * e.g.
          * SseJob::push(
